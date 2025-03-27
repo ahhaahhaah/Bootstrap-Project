@@ -8,7 +8,7 @@
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
         if (
             location.pathname.replace(/^\//, "") ==
-                this.pathname.replace(/^\//, "") &&
+            this.pathname.replace(/^\//, "") &&
             location.hostname == this.hostname
         ) {
             var target = $(this.hash);
@@ -51,32 +51,32 @@
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
-    
+
     function reveal() {
         var reveals = document.querySelectorAll(".page-section");
-        
+
         for (var i = 0; i < reveals.length; i++) {
             var windowHeight = window.innerHeight;
             var elementTop = reveals[i].getBoundingClientRect().top;
             var elementVisible = 150;
-            
+
             if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add("fadeInUp");
             }
         }
     }
-    
+
     window.addEventListener("scroll", reveal);
-    reveal(); 
+    reveal();
     $(".portfolio-item").hover(
-        function() {
+        function () {
             $(this).addClass("active");
         },
-        function() {
+        function () {
             $(this).removeClass("active");
         }
     );
-    
+
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
@@ -85,19 +85,19 @@
         }
         return color;
     }
-    
+
     $(".btn-xl").hover(
-        function() {
+        function () {
             var randomColor = getRandomColor();
             $(this).css("box-shadow", `0 5px 15px ${randomColor}80`);
         },
-        function() {
+        function () {
             $(this).css("box-shadow", "none");
         }
     );
 
-    $(".team-member img").click(function() {
+    $(".team-member img").click(function () {
         $(this).toggleClass("clicked");
     });
-    
+
 })(jQuery);
